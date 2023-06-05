@@ -359,26 +359,47 @@ public:
 		cout << output;
 		return output;
 	}
-	
-	bool isValid(string s) {
+	//exercise 20
+	bool isValid(string s) {//hint is what goes in last must come out first
 		int i = 0;
-		int parenthesesBrackets = 0, curlyBrackets = 0, squareBrackets = 0;		
-		int pCount=1, cCount=1, sCount=1;
 		int length = s.length();
+		vector <char> bracketVector; 	
 
-		for  (i = 0; i < length; i++)
+		if (length <= 1) { return false; }//fail if less than a pair of brackets
+
+		for (i = 0; i < length; i++)
 		{
-			if (parenthesesBrackets < 0 || curlyBrackets < 0 || squareBrackets < 0) { return false; }//closed before an open
-			if (s[i] == *"(") { parenthesesBrackets += 1; pCount = i; }
-			else{if (s[i] == *"{") { curlyBrackets += 1; cCount = i;}
-			else {if (s[i] == *"[") { squareBrackets += 1; sCount = i; }
-			else{if (s[i] == *")") { parenthesesBrackets -= 1; pCount -= i; }
-			else{if (s[i] == *"}") { curlyBrackets -= 1; cCount -= i; }
-			else{if (s[i] == *"]") { squareBrackets -= 1; sCount -= i;}}}}}}					
+			
+			if (s[i] == *"(" || s[i] == *"{"|| s[i] == *"[")
+			{
+				bracketVector.push_back(s[i]);
+			}
+			else
+			{
+				if (bracketVector.size() == 0) { return false; }//fail if starting with end bracket
+				switch (s[i])
+				{
+				case ')':
+					if (bracketVector.back() == '('){bracketVector.pop_back();}
+					else{return false;}
+						break;
+				case '}':
+					if (bracketVector.back() == '{'){bracketVector.pop_back();}
+					else{return false;}
+					break;
+				case ']':
+					if (bracketVector.back() == '['){bracketVector.pop_back();}
+					else{return false;}
+					break;
+				default:
+					return false;
+					break;
+				}
+			}
 		}
-		if (pCount % 2 == 0 || cCount % 2 == 0 || sCount % 2 == 0) { return false; }//checks for odd spacing as should always be even for pairs
-		if (parenthesesBrackets==0&& curlyBrackets==0&& squareBrackets==0)
-		{return true;}else{return false;}
+		if (bracketVector.size()==0){return true;}
+		else{return false;}
+		
 	}
 };
 void drawMario() {
@@ -440,7 +461,7 @@ int  main()
 	/*vector <string>  strs{ "flower","flower","flower","flower" };
 	Test.longestCommonPrefix(strs);*/
 	
-	//cout <<"Output: "<< Test.isValid("[({])}") << endl;
+	cout <<"Output: "<< Test.isValid("){") << endl;
 	
 	return 0;
 }
