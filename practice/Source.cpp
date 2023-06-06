@@ -222,6 +222,37 @@ void popTest() {
 
 	cout << "Number of years: " << years;
 }
+void drawMario() {
+	//makes a ascii pyramid, height definable by user
+	char blankSpace = ' ';
+	char block = '#';
+	int height = 0;
+	int x, y;
+
+	while (height < 1 || height>8)
+	{
+		cin >> height;//height input		
+	}
+
+	for (y = height; y >= 0; y--)//y-axis starting at the top
+	{
+		for (x = height; x >= 0; x--)//x-axis left side, width and height are the same
+		{
+			if (x < height - y) { cout << block; }
+			else { cout << blankSpace; }
+		}
+
+		cout << blankSpace << blankSpace;//middle gap
+
+		for (x = 0; x < height; x++)//x-axis right side
+		{
+			if (x < height - y) { cout << block; }
+			else { cout << blankSpace; }
+		}
+
+		cout << endl;//new line
+	}
+}
 class Solution {
 public:
 	//exercise 1
@@ -401,38 +432,30 @@ public:
 		else{return false;}
 		
 	}
-};
-void drawMario() {
-	//makes a ascii pyramid, height definable by user
-	char blankSpace = ' ';
-	char block = '#';
-	int height=0;
-	int x,y;
+	//exercise 21 
+	//Definition for singly - linked list.
+	struct ListNode {
+		int val;
+		ListNode* next;
+		ListNode() : val(0), next(nullptr) {}
+		ListNode(int x) : val(x), next(nullptr) {}
+		ListNode(int x, ListNode* next) : val(x), next(next) {}
+	};
+		ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+			//new vector
+			
+			//if first entry is blank ignore it
 
-	while (height <1|| height>8)
-	{
-		cin >> height;//height input		
-	}
+			//store the head
 
-	for (y = height; y >= 0; y--)//y-axis starting at the top
-	{		
-		for (x = height; x >= 0; x--)//x-axis left side, width and height are the same
-		{
-			if (x < height - y) { cout << block; }
-			else { cout << blankSpace; }
+			//check both lists and add the smallest number to the new list
+				//increment both list indexes as their smalles is added to the new list
+
+			//return head			
 		}
 
-		cout << blankSpace << blankSpace;//middle gap
+};
 
-		for ( x = 0; x < height; x++)//x-axis right side
-		{
-			if (x< height -y){cout << block;}
-			else{cout << blankSpace;}			
-		}	
-
-		cout << endl;//new line
-	}
-}
 int  main()
 {
 	//int test;
@@ -451,17 +474,18 @@ int  main()
 //	popTest();
 	//drawMario();
 
-	Solution Test;/*
-	vector<int> nums = {3, 3};
-	twosumTest.twoSum(nums, 6);*/
-/*	Solution palindromeTest;
-	palindromeTest.isPalindrome(121);*/
-/*	Solution romanNumeralsTest;
-	romanNumeralsTest.romanToInt("MCMXCIV");*/
-	/*vector <string>  strs{ "flower","flower","flower","flower" };
-	Test.longestCommonPrefix(strs);*/
-	
+	Solution Test;
+	/*vector<int> nums = {3, 3};
+	twosumTest.twoSum(nums, 6);
+	Solution palindromeTest;
+	palindromeTest.isPalindrome(121);
+	Solution romanNumeralsTest;
+	romanNumeralsTest.romanToInt("MCMXCIV");
+	vector <string>  strs{ "flower","flower","flower","flower" };
+	Test.longestCommonPrefix(strs);
 	cout <<"Output: "<< Test.isValid("){") << endl;
+	*/
+	
 	
 	return 0;
 }
