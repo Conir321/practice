@@ -5,6 +5,14 @@ using namespace std;
 #include <string>
 #include <vector>
 
+struct ListNode {
+	int val;
+	ListNode* next;
+	ListNode() : val(0), next(nullptr) {}
+	ListNode(int x) : val(x), next(nullptr) {}
+	ListNode(int x, ListNode* next) : val(x), next(next) {}
+};
+
 char test() {
 	string s_part1 = "\"function";
 	string s_part2 = "test\"";
@@ -432,27 +440,85 @@ public:
 		else{return false;}
 		
 	}
-	//exercise 21 
+	//exercise 21																			COME BACK TO
 	//Definition for singly - linked list.
-	struct ListNode {
-		int val;
-		ListNode* next;
-		ListNode() : val(0), next(nullptr) {}
-		ListNode(int x) : val(x), next(nullptr) {}
-		ListNode(int x, ListNode* next) : val(x), next(next) {}
-	};
 		ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 			//new vector
+			vector <int> newList;
+			int i = 0;
+			int list1Store, list2Store;
+			bool sorting = true;
+			int length = 0;
+			ListNode* result;
+
+			while (sorting == true)
+			{
+				list1Store= list1->val;
+				list2Store = list2->val;
+				if (list1Store<list2Store)
+				{
+					newList[i] = list1Store;
+					
+					if (i==0)
+					{
+						result = list1;
+					}
+					list1->next;
+				}
+				else
+				{
+					newList[i] = list2Store;
+					if (i == 0)
+					{
+						result = list2;
+					}
+					list2->next;
+				}
+				if (list1->next==nullptr||list2->next==nullptr)
+				{
+					sorting = false;
+				}
+				i++;				
+			}
+			
+
+			return result;
+			//store the lists in vector
+			//sort the list into accending order
 			
 			//if first entry is blank ignore it
 
 			//store the head
 
+
+			//return head		
+
+
+
+
+			//better idea?
+			//
 			//check both lists and add the smallest number to the new list
 				//increment both list indexes as their smalles is added to the new list
-
-			//return head			
 		}
+
+	//exercise 26
+		int removeDuplicates(vector<int>& nums) {
+			int length = nums.size();			
+
+			for (int i = 0; i < length-1; i++)
+			{
+				//check if unique
+				if (nums[i]==nums[i+1])
+				{
+					nums.erase(nums.begin()+i+1);
+					i=-1;
+					length=nums.size();
+				}				
+			}
+			return length;
+		}
+	//exercise 27
 
 };
 
@@ -485,7 +551,8 @@ int  main()
 	Test.longestCommonPrefix(strs);
 	cout <<"Output: "<< Test.isValid("){") << endl;
 	*/
-	
+	vector<int> nums = { 1,1,1 };
+	cout << Test.removeDuplicates(nums) << endl;
 	
 	return 0;
 }
