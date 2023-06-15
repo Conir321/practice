@@ -519,40 +519,34 @@ public:
 			return length;
 		}
 	//exercise 27
+		int removeElement(vector<int>& nums, int val) {
+			//remove all occurances of val in nums
+			//returm size of nums
 
+			int length = nums.size();
+			
+
+			for (int i = 0; i < length; i++)
+			{
+				if (nums[i] == val)
+				{
+					nums.erase(nums.begin()+i);
+					length--;
+					i--;
+				}
+			}
+			return nums.size();
+		}
 };
 
 int  main()
 {
-	//int test;
-	int sort[10]{ 1,3,6,9,2,4,5,7,8,10 };
-	int size = sizeof(sort) / 4;
-	
-//	test =	basicsTest();	
-//	test();
-//	loopTest(test);
-//	refTest();
-//	int_ArrayTest();
-//	w3_practice(1);
-	//fizzBuzz();
-//	arraySort(sort,size);
-//	arraySort_dec(sort, size);
-//	popTest();
-	//drawMario();
+
 
 	Solution Test;
-	/*vector<int> nums = {3, 3};
-	twosumTest.twoSum(nums, 6);
-	Solution palindromeTest;
-	palindromeTest.isPalindrome(121);
-	Solution romanNumeralsTest;
-	romanNumeralsTest.romanToInt("MCMXCIV");
-	vector <string>  strs{ "flower","flower","flower","flower" };
-	Test.longestCommonPrefix(strs);
-	cout <<"Output: "<< Test.isValid("){") << endl;
-	*/
-	vector<int> nums = { 1,1,1 };
-	cout << Test.removeDuplicates(nums) << endl;
+
+	vector<int> nums = { 0,1,2,2,3,0,4,2 };
+	cout << Test.removeElement(nums,2) << endl;
 	
 	return 0;
 }
