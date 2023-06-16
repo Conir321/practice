@@ -537,6 +537,42 @@ public:
 			}
 			return nums.size();
 		}
+	//exercise 28
+		int strStr(string haystack, string needle) {
+			//return the index of the first occurance of needle in haystack
+				//else return -1
+
+			int lengthHaystack = haystack.size(), lengthNeedle = needle.size(), counter = 0;
+
+			if (lengthNeedle > lengthHaystack)
+			{
+				return -1;
+			}
+
+			for (int i = 0; i < lengthHaystack; i++)
+			{
+				if (haystack[i]==needle[0])
+				{
+					for (int j = 0; j < lengthNeedle; j++)
+					{
+						if (haystack[j+i]==needle[j])
+						{
+							counter++;
+							if (counter==lengthNeedle)
+							{
+								return i;
+							}
+						}
+						else
+						{
+							counter = 0; j = lengthNeedle;
+						}
+					}
+				}
+			}
+
+			return -1;
+		}
 };
 
 int  main()
@@ -545,8 +581,8 @@ int  main()
 
 	Solution Test;
 
-	vector<int> nums = { 0,1,2,2,3,0,4,2 };
-	cout << Test.removeElement(nums,2) << endl;
+	//vector<int> nums = { 0,1,2,2,3,0,4,2 };
+	cout << Test.strStr("babba","bbb") << endl;
 	
 	return 0;
 }
