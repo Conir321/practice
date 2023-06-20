@@ -573,6 +573,51 @@ public:
 
 			return -1;
 		}
+//exercise 35
+		int searchInsert(vector<int>& nums, int target) {
+			int length = nums.size();			
+			int i , var=2;
+			if (target <=nums[0])
+			{
+				return 0;
+			}
+			else
+			{
+				if (target > nums[length - 1])
+				{
+					return length;
+				}
+				else
+				{
+					if (target == nums[length - 1])
+					{
+						return length-1;
+					}
+				}
+			}
+			
+
+			for (i = 0; i < length; )
+			{
+				if (target <= nums[i]){	return i;}
+				if (target<=nums[i + 1] && target > nums[i]) { return i + 1; }
+
+
+				if (target <nums[i+(length/var)])
+				{
+					length -= length / var;
+					i++;
+				}
+				else
+				{
+					i += length / var;					
+				}
+				var = var * 2;
+
+			}
+			return i;
+		
+		}
 };
 
 int  main()
@@ -580,9 +625,8 @@ int  main()
 
 
 	Solution Test;
-
-	//vector<int> nums = { 0,1,2,2,3,0,4,2 };
-	cout << Test.strStr("babba","bbb") << endl;
+	vector<int> nums = { 1,4,6,7,8,9 };
+ cout << Test.searchInsert(nums, 6) << endl;
 	
 	return 0;
 }
