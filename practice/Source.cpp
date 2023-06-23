@@ -29,5 +29,12 @@ int  main()
 	cout << "age 50 test: " << employee1.getAge() << endl;
 	employee1.AskForPromotion();
 
+	Developer dev1("dev1", "company1", 30,"java");		
+	dev1.setFavoutiteProgrammingLanguage("cpp");
+	dev1.FixBug();
+
+	Teacher t1("teacher1","school",45,"Geograpahy");
+	t1.PrepareLesson();
+
 	return 0;
 }
