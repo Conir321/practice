@@ -53,6 +53,10 @@ public:
 		}
 
 	}
+
+	virtual void Work() {
+		cout << Name << " is checking email, task backlog, performing tasks..." << endl;
+	}
 };
 
 class Developer : public Employee {//inheritance
@@ -74,6 +78,9 @@ public:
 	void FixBug() {
 		cout << getName() << " fixed the bug using " << FavoutiteProgrammingLanguage<<endl;
 	}	
+	void Work() {
+		cout << getName() << " is writing "<<FavoutiteProgrammingLanguage<<" code." << endl;
+	}
 };
 class Teacher:public Employee {
 private:
@@ -86,5 +93,12 @@ public:
 	void PrepareLesson() {
 		cout << getName() << " is preparing a " << Subject << " lesson." << endl;
 	}
+	void Work() {
+		cout << getName() << " is teaching " << Subject << "." << endl;
+	}
 
 };
+
+//polymorphism
+
+

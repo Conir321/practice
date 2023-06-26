@@ -15,26 +15,15 @@ int  main()
  cout << Test.searchInsert(nums, 6) << endl;*/
 
 	//OO practice
-	Employee employee1("name1", "company1", 25);
-	Employee employee2("name2", "company2", 35);
 
-	employee1.IntroduceYourself();
-	employee2.IntroduceYourself();
+	Developer d("dev1", "company1", 30,"cpp");
+	Teacher t("teacher1","school",45,"Geograpahy");
 
-	employee1.setAge(15);
-	cout << "age 15 test: " << employee1.getAge() << endl;
-	employee1.AskForPromotion();
+	Employee* e1 = &d ;
+	Employee* e2 = &t;
 
-	employee1.setAge(50);
-	cout << "age 50 test: " << employee1.getAge() << endl;
-	employee1.AskForPromotion();
-
-	Developer dev1("dev1", "company1", 30,"java");		
-	dev1.setFavoutiteProgrammingLanguage("cpp");
-	dev1.FixBug();
-
-	Teacher t1("teacher1","school",45,"Geograpahy");
-	t1.PrepareLesson();
+	e1->Work();
+	e2->Work();
 
 	return 0;
 }
