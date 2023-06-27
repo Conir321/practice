@@ -365,4 +365,30 @@ public:
 		return i;
 
 	}
+
+	//exercise 58
+	int lengthOfLastWord(string s) {
+		//starting from the end look for a space
+			//count as you go and return the count
+		//ignore spaces until a work is detected
+
+		int length = s.size();
+		int wordLength = 0;
+
+		
+
+		for (int i = length-1;  i >= 0;  i--)
+		{		
+			if (s[i] != ' ')
+			{
+				wordLength++;
+			}
+			if (s[i]== ' ' && wordLength>0)
+			{
+				return wordLength;
+			}			
+		}
+		
+		return wordLength;
+	}
 };
