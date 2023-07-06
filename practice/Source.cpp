@@ -15,7 +15,6 @@ void printPointer(void* ptr,char type) {
 	}
 	
 }
-
 void pointerPractice() {
 	int number = 5;
 	int* ptrNumber = &number;
@@ -30,6 +29,18 @@ void pointerPractice() {
 	
 }
 
+
+struct SmartPhone {
+	string name;
+	int storageSpace;
+	string colour;
+	float price;
+};
+void structurePractice() {
+	SmartPhone smartphone = {"iPhone 12", 32, "black", 999.99};
+	cout << smartphone.price;
+}
+
 int  main()
 {
 
@@ -38,7 +49,9 @@ int  main()
 	//vector<int> nums = { 1,4,6,7,8,9 };
 // cout << "word length: "<<Test.lengthOfLastWord("a") << endl;
 
-	pointerPractice();
+	//pointerPractice();
+	structurePractice();
+
 	
 
 
