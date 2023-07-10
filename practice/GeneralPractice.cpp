@@ -1,5 +1,66 @@
 #include "Libaries.cpp"
 
+void printPointer(void* ptr, char type) {
+	switch (type)
+	{
+	case 'i':cout << *(int*)ptr << endl; break;
+	case 'c':cout << *(char*)ptr << endl; break;
+	default:
+		cout << "printPointer error: no case selected." << endl;
+		break;
+	}
+
+}
+void pointerPractice() {
+	int number = 5;
+	int* ptrNumber = &number;
+
+	char letter = 'a';
+	char* ptrLetter = &letter;
+
+	printPointer(ptrNumber, 'i');
+	printPointer(ptrLetter, 'c');
+	printPointer(ptrNumber, '6');
+
+
+}
+
+
+struct SmartPhone {
+	string name;
+	int storageSpace;
+	string colour;
+	float price;
+};
+struct Person {
+	string name;
+	int age;
+	SmartPhone smartphone;
+};
+void printSmartphone(SmartPhone smartphone) {
+	cout << "Smartphone:" << endl;
+	cout << smartphone.name << endl;
+	cout << smartphone.storageSpace << endl;
+	cout << smartphone.colour << endl;
+	cout << smartphone.price << endl;
+}
+void printPerson(Person person) {
+	cout << "Person:" << endl;
+	cout << person.name << endl;
+	cout << person.age << endl;
+	printSmartphone(person.smartphone);
+}
+void structurePractice() {
+	SmartPhone smartphone = { "iPhone", 32, "black", 999.99 };
+	SmartPhone smartphone2 = { "samsung", 64, "gray",888.88 };
+
+	//printSmartphone(smartphone);
+	//printSmartphone(smartphone2);
+
+	Person p = { "Tom",45,smartphone };
+	printPerson(p);
+}
+
 char test() {
 	string s_part1 = "\"function";
 	string s_part2 = "test\"";
