@@ -3,8 +3,9 @@
 struct Question {
 	string question;
 	string answer[3];
-	int correctAnswer;
+	int correctAnswer =-1;
 };
+
 bool askQuestion(Question q) {
 	int answer = 0;
 	cout << q.question << endl;
