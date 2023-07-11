@@ -1,5 +1,5 @@
 #include "Libaries.cpp"
-#include "HeaderTest.h"
+#include "QuizApp.h"
 
 struct Question {
 	string question;

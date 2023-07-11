@@ -33,8 +33,13 @@
     <ClCompile Include="QuizApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HeaderTest.h">
+    <ClCompile Include="QuizApp.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneralPractice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

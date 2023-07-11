@@ -140,12 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GeneralPractice.cpp" />
-    <ClCompile Include="HeaderTest.h" />
+    <ClCompile Include="QuizApp.h" />
     <ClCompile Include="Libaries.cpp" />
     <ClCompile Include="OOPractice.cpp" />
     <ClCompile Include="QuizApp.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="LeetCode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneralPractice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

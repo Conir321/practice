@@ -1,4 +1,5 @@
 #include "Libaries.cpp"
+#include "GeneralPractice.h"
 
 void editFile(string fileName, string text, char c) {
 	fstream myFile;
