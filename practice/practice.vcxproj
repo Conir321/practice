@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GeneralPractice.cpp" />
+    <ClCompile Include="HeaderTest.h" />
     <ClCompile Include="Libaries.cpp" />
     <ClCompile Include="OOPractice.cpp" />
     <ClCompile Include="QuizApp.cpp" />
